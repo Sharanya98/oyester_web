@@ -1,18 +1,55 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+  
+    <CompanyLists :data="list"/>
+
   </div>
+  
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import { ref } from 'vue'
+  import CompanyLists from '../components/CompanyLists.vue'
+  
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
+
+  export default {
+    name: 'Home',
+    components: {  
+      CompanyLists      
+    },
+    setup(){
+
+      const list = ref([])
+      const error = ref(null)
+      
+      
+
+      const load = async() =>{
+        try{
+          
+          let res = await fetch('http://localhost:3000/data')
+          
+          console.log("res",res)
+          if(!res.ok){
+            throw Error('NO ERROR')
+          }
+          const data = await res.json()
+          console.log(data)
+         
+          list.value = data
+          
+        }
+        catch(err){
+          error.value = err.message
+          console.log(err)
+        }
+      }
+
+      console.log("home",list)
+      load()
+
+      return {list,load,error}
+    }
   }
-}
 </script>

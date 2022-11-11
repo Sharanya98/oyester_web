@@ -1,0 +1,33 @@
+{
+    "data": [
+      {
+        "id": 1,
+        "Name": "Townwork",
+        "Location": "Tokyo",
+        "Industry": "Job Provding Company",
+        "Agent":"#001"
+      },
+      {
+        "id": 2,
+        "Name": "Jackpot",
+        "Location": "Tokyo",
+        "Industry": "IT services",
+        "Agent":"#002"
+      },
+      {
+        "id": 3,
+        "Name": "Sushiro",
+        "Location": "kyoto",
+        "Industry": "Food Services",
+        "Agent":"#003"
+      },
+      {
+        "id": 4,
+        "Name": "Daiwa Hotel",
+        "Location": "Osaka",
+        "Industry": "Hospitility",
+        "Agent":"#004"
+      }
+      
+    ]
+  }
