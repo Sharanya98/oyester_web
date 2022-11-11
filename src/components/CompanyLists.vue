@@ -24,8 +24,7 @@ export default {
        
       ])
       const value = props.data
-      console.log("co",props)
-    
+         
       return {headers,value}
     }  
 };
