@@ -1,8 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app
-    elevation="0"
-    >
+    <v-app-bar app elevation="0">
       <v-toolbar-title>Groww</v-toolbar-title>
     </v-app-bar>
     <SideBar />  

@@ -20,7 +20,7 @@
     },
     setup(){
 
-      const list = ref([])
+      const list = ref([])      
       const error = ref(null)
       
       
@@ -45,6 +45,8 @@
           console.log(err)
         }
       }
+
+      
 
       console.log("home",list)
       load()
