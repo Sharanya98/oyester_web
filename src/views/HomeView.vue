@@ -3,6 +3,8 @@
   
     <CompanyLists :data="list"/>
 
+    <AgentLists :data="list"/>
+
   </div>
   
 </template>
@@ -10,16 +12,19 @@
 <script>
   import { ref } from 'vue'
   import CompanyLists from '../components/CompanyLists.vue'
+  import AgentLists from '../components/AgentLists.vue'
   
 
 
   export default {
     name: 'Home',
     components: {  
-      CompanyLists      
+      CompanyLists,
+      AgentLists     
     },
     setup(){
 
+      const display = ref(null)
       const list = ref([])      
       const error = ref(null)
       
@@ -51,7 +56,7 @@
       console.log("home",list)
       load()
 
-      return {list,load,error}
+      return {list,load,error,display}
     }
   }
 </script>

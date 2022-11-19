@@ -3,16 +3,17 @@
     <template>
       <v-data-table :headers="headers" :items="value" class="elevation-1">
         <template v-slot:[`item.Agent`]="{ item }">
-          <v-btn color="primary" @click.stop="display = !display" text>{{
+          <v-btn color="primary"  input-value text>{{
             item.Agent.id 
           }}</v-btn>
-        </template>
+        </template> 
       </v-data-table>
-    </template>
-    <template>
-      <v-navigation-drawer 
+    </template>  
+    
+    <!-- <template>
+      <v-navigation-drawer   
       v-model="display" 
-      absolute temporary right
+      absolute temporary right 
      
       >
         <v-list > 
@@ -41,14 +42,15 @@
           </v-list-item> 
         </v-list>
       </v-navigation-drawer>
-    </template>
+    </template> -->   
   </v-container>
 </template>
-
+ 
 <script>
 import { ref } from "vue";
+
 export default {
-  props: ["data"],
+  props: ["data"],  
   setup(props) {
     const headers = ref([
       { text: "ID", value: "id" },
@@ -58,13 +60,10 @@ export default {
       { text: "Agent", value: "Agent" },
     ]);
     const value = props.data;
-    const display = ref(null);
-    console.log("==>",value)
-    const showDetail = () => {
-      console.log("btn");
-      this.display = true;
-    };
-    return { headers, value, display, showDetail };
+    const display = ref(null);  
+    console.log("==>",value) 
+    
+    return { headers, value, display };
   }, 
 };
 </script>
