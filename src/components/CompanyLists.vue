@@ -4,53 +4,20 @@
       <v-data-table :headers="headers" :items="value" class="elevation-1">
         <template v-slot:[`item.Agent`]="{ item }">
           <v-btn color="primary"  input-value text>{{
-            item.Agent.id 
+            item.Agent.id  
           }}</v-btn>
         </template> 
       </v-data-table>
-    </template>  
-    
-    <!-- <template>
-      <v-navigation-drawer   
-      v-model="display" 
-      absolute temporary right 
-     
-      >
-        <v-list > 
-          <v-list-item >
-            <v-list-item-title>Agent Details</v-list-item-title>           
-          </v-list-item>
-          <v-list-item >
-            <v-list-item-title>ID</v-list-item-title>
-            <v-list-item-subtitle>001</v-list-item-subtitle>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>name</v-list-item-title>
-            <v-list-item-subtitle>sharanuay</v-list-item-subtitle>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>email</v-list-item-title>
-            <v-list-item-subtitle>Shar@abc.com</v-list-item-subtitle>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>Contact</v-list-item-title>
-            <v-list-item-subtitle>080-332-6555</v-list-item-subtitle>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>Department</v-list-item-title>
-            <v-list-item-subtitle>Finance</v-list-item-subtitle>
-          </v-list-item> 
-        </v-list>
-      </v-navigation-drawer>
-    </template> -->   
+    </template> 
+      
   </v-container>
-</template>
+</template>   
  
 <script>
-import { ref } from "vue";
+import { ref } from "vue"; 
 
 export default {
-  props: ["data"],  
+  props: ["data"],      
   setup(props) {
     const headers = ref([
       { text: "ID", value: "id" },
@@ -61,7 +28,7 @@ export default {
     ]);
     const value = props.data;
     const display = ref(null);  
-    console.log("==>",value) 
+    console.log("==>",value)  
     
     return { headers, value, display };
   }, 
