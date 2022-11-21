@@ -3,21 +3,32 @@
     <template>
       <v-data-table :headers="headers" :items="value" class="elevation-1">
         <template v-slot:[`item.Agent`]="{ item }">
-          <v-btn color="primary"  input-value text>{{
-            item.Agent.id  
-          }}</v-btn>
-        </template> 
+          <v-btn
+            color="primary"
+            @click="callAgentfunc(item.Agent.id)"
+            value
+            text
+            :display="callAgent"
+            >{{ item.Agent.id }}</v-btn
+          >
+        </template>
       </v-data-table>
-    </template> 
-      
+    </template>
+    <template>
+      <AgentLists    :setvalue="setValue" />
+    </template>  
   </v-container>
-</template>   
+</template>     
  
 <script>
-import { ref } from "vue"; 
+import { ref } from "vue";
+import AgentLists from "./AgentLists.vue";
 
 export default {
-  props: ["data"],      
+  props: ["data"],
+  components: {
+    AgentLists,
+  },
   setup(props) {
     const headers = ref([
       { text: "ID", value: "id" },
@@ -27,11 +38,21 @@ export default {
       { text: "Agent", value: "Agent" },
     ]);
     const value = props.data;
-    const display = ref(null);  
-    console.log("==>",value)  
     
-    return { headers, value, display };
-  }, 
+    const callAgent = ref(false); 
+    const setValue = null;
+
+    console.log("==>", value);
+
+    return { headers, value, callAgent, setValue };
+  },
+  methods: {
+    callAgentfunc(btnvalue) {
+      this.callAgent = !this.callAgent;
+      console.log("value", btnvalue);
+      this.setValue = btnvalue;
+    },
+  },
 };
 </script>
 
