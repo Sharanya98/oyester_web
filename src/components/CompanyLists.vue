@@ -5,29 +5,38 @@
         <template v-slot:[`item.Agent`]="{ item }">
           <v-btn
             color="primary"
-            @click="callAgentfunc(item.Agent.id)"
-            value
+            @click="agentData(item.Agent.id)"
             text
-            :display="callAgent"
+            outlined
+            class="ma-2"
             >{{ item.Agent.id }}</v-btn
           >
         </template>
-      </v-data-table>
+      </v-data-table> 
     </template>
     <template>
-      <AgentLists    :setvalue="setValue" />
+      <v-navigation-drawer v-model="display" width="300" right absolute temporary>
+      <v-list>
+        <v-list-item>
+          <v-list-item-title>Agent Details</v-list-item-title>
+        </v-list-item>
+        <v-list-item v-for="item in agentDetails" :key="item.id">
+          <AgentList :value="item" />
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer> 
     </template>  
   </v-container>
-</template>     
- 
+</template>         
+        
 <script>
 import { ref } from "vue";
-import AgentLists from "./AgentLists.vue";
+import AgentList from "./AgentList.vue";
 
 export default {
   props: ["data"],
   components: {
-    AgentLists,
+    AgentList,
   },
   setup(props) {
     const headers = ref([
@@ -39,25 +48,22 @@ export default {
     ]);
     const value = props.data;
     
-    const callAgent = ref(false); 
-    const setValue = null;
+    const display = ref(false); 
+   
+    const agentDetails = ref({});   
 
-    console.log("==>", value);
-
-    return { headers, value, callAgent, setValue };
+    return { headers, value, display, agentDetails};
   },
   methods: {
-    callAgentfunc(btnvalue) {
-      this.callAgent = !this.callAgent;
-      console.log("value", btnvalue);
-      this.setValue = btnvalue;
+    agentData(btnvalue) {
+      this.display = !this.display;  
+      const agent = this.value.filter((item) => item.Agent.id == btnvalue);
+      this.agentDetails = agent;
     },
   },
 };
 </script>
 
-<style>
-.layout {
-  display: flex;
-}
+<style> 
+ 
 </style>

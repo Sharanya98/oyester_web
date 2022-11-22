@@ -1,42 +1,34 @@
 <template>
-      <v-list >
-        <v-list-item v-for="(v,k) in value.Agent" :key="k.id">
-                <!-- {{v}} {{k}} {{i}} -->
-
-       
-            
-              <v-list-item-title> {{k}} </v-list-item-title>
-               <v-list-item-subtitle>{{v}}</v-list-item-subtitle>        
-                         
-       
-
-      
-       
-      </v-list-item>
-          
-
-      </v-list>
+  
+  <v-list class="contain">
+    <v-list-item v-for="(details, key) in value.Agent" :key="key.id">
+      <v-list-item-title> {{ key }} </v-list-item-title>
+    
+      <v-list-item-subtitle class="wrap-text">{{ details }}</v-list-item-subtitle>
+    </v-list-item>
+  </v-list>
 </template>
 
 <script>
 export default {
-  props :['value'],
-  data(props){
-    return{
-       p : props.value
-      
-    }
+  props: ["value"],
+  data() {
+    return {
+   
+    };
   },
-  methods: {
-    getDataByID : function(){
-      console.log("p",this.p)
-    }
-  }
-
- 
-}
+};
 </script>
 
-<style>
+<style scoped>
 
+.contain{
+  width:300px;
+}
+
+.wrap-text {
+  white-space: normal;
+  -webkit-line-clamp: unset !important;
+  
+}
 </style>
