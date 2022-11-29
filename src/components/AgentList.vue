@@ -1,7 +1,7 @@
 <template>
   
   <v-list class="contain">
-    <v-list-item v-for="(details, key) in value.Agent" :key="key.id">
+    <v-list-item v-for="(details, key) in value.Agent" :key="key">
       <v-list-item-title> {{ key }} </v-list-item-title>
     
       <v-list-item-subtitle class="wrap-text">{{ details }}</v-list-item-subtitle>
