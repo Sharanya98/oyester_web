@@ -6,25 +6,22 @@
     <SideBar />  
 
     <v-main>
-      <v-container fluid>
+      <v-container fluid> 
         <router-view />
       </v-container>
     </v-main>
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import SideBar from "./components/SideBar.vue";
-export default {
+export default defineComponent({
   name: "App",
   components: {
     SideBar
   },
 
-  data() {
-    return {
-      
-    };
-  },
-};
+  
+});
 </script>

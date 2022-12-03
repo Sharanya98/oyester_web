@@ -27,18 +27,22 @@
   </v-card>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      items: [
-        { title: "Home", icon: "mdi-home-city" },
-        { title: "My Account", icon: "mdi-account" },
-        { title: "Users", icon: "mdi-account-group-outline" },
-      ],
-    };
+<script lang="ts">
+import Item from "@/types/item";
+import { defineComponent, ref } from "vue";
+
+export default defineComponent({
+  name: "SideBar",
+  setup() {
+    const items = ref<Item[]>([
+      { title: "Home", icon: "mdi-home-city" },
+      { title: "My Account", icon: "mdi-account" },
+      { title: "Users", icon: "mdi-account-group-outline" },
+    ]);
+
+    return { items };
   },
-};
+});
 </script>
 
 <style>

@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <CompanyLists :data="list" />
@@ -5,10 +6,10 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { defineComponent, ref } from "vue";
 import CompanyLists from "../components/CompanyLists.vue";
 
-export default {
+export default defineComponent({
   name: "Home",
   components: {
     CompanyLists,
@@ -20,7 +21,7 @@ export default {
 
     const load = async () => {
       try {
-        let res = await fetch("http://localhost:3000/data");
+        let res = await fetch("http://localhost:3000/data"); 
 
         console.log("res", res);
         if (!res.ok) {
@@ -40,6 +41,25 @@ export default {
     load();
 
     return { list, load, error, display };
-  },
-};
+  }
+});
 </script>
+<!-- <template>
+  <div class="home">
+    <img alt="Vue logo" src="../assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+
+@Component({
+  components: {
+    HelloWorld,
+  },
+})
+export default class HomeView extends Vue {}
+</script> -->
+ 
