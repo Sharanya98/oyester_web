@@ -20,9 +20,8 @@
         <v-list-item>
           <v-list-item-title>Agent Details</v-list-item-title>
         </v-list-item>
-        <v-list-item v-for="i in agentDetails" :key="i">          
-           <!-- <AgentList :value="v" :keys="k"/> -->              
-           <AgentList :value="i" />        
+        <v-list-item v-for="info in agentDetails" :key="info">        
+          <AgentList :value="info" />        
         </v-list-item>     
       </v-list>  
     </v-navigation-drawer>  
@@ -59,12 +58,6 @@ export default defineComponent({
     const display = ref<boolean>(false); 
    
     const agentDetails = ref({});      
- 
-    // const filteredData = computed((ids : string ) =>{
-    //    display.value= !display.value; 
-    //     return value.filter((item) => {
-    //       return  item.Agent.id == ids})        
-    // })
     
     return { headers, value, display, agentDetails};
   },
@@ -75,9 +68,8 @@ export default defineComponent({
       this.agentDetails = agent;
     }, 
   },          
-});   
+});      
 </script>
-
 <style> 
  
-</style>
+</style>  
