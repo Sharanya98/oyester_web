@@ -4,7 +4,6 @@
     <CompanyLists :data="list" />
   </div>
 </template>
-
 <script>
 import { defineComponent, ref } from "vue";
 import CompanyLists from "../components/CompanyLists.vue";
@@ -12,7 +11,7 @@ import CompanyLists from "../components/CompanyLists.vue";
 export default defineComponent({
   name: "Home",
   components: {
-    CompanyLists,
+    CompanyLists, 
   },
   setup() {
     const display = ref(null);
@@ -28,7 +27,7 @@ export default defineComponent({
           throw Error("NO ERROR");
         }
         const data = await res.json();
-        console.log("data",data);
+        console.log("data",data); 
 
         list.value = data;
       } catch (err) {

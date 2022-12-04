@@ -5,8 +5,13 @@ interface Data {
     Name: string,
     Location: string,
     Industry: string,
-    Agent: Agent
-}
-
+    Agent: {
+        id: string,
+        contact: string,
+        Name: string,
+        Email: string,        
+        Department: string
+    }
+}  
 
 export default Data

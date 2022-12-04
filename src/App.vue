@@ -8,7 +8,7 @@
     <v-main>
       <v-container fluid> 
         <router-view />
-      </v-container>
+      </v-container> 
     </v-main>
   </v-app>
 </template>
@@ -20,8 +20,6 @@ export default defineComponent({
   name: "App",
   components: {
     SideBar
-  },
-
-  
+  }, 
 });
 </script>

@@ -1,8 +1,11 @@
 <template>
   
   <v-list class="contain">
-    <v-list-item v-for="item in value" :key="item">
+    <v-list-item v-for="item in value" :key="item">    
+       
       {{item}}
+
+      <!-- <AgentDetails :details="item"/>  -->
       <!-- {{key}} {{details}} -->
       <!-- <v-list-item-title>  ID  </v-list-item-title>    
       <v-list-item-subtitle class="wrap-text">{{ item.id }}</v-list-item-subtitle>
@@ -25,8 +28,11 @@
 //  import Agent from "@/types/agent";
 //   import Agent from "@/types/agent";
 //import Agent from "@/types/agent";
+//import Agent from "@/types/agent";
+// import Agent from "@/types/agent";
 import Data from "@/types/data";
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType } from "vue"; 
+// import AgentDetails from "./AgentDetails.vue";
 
 export default defineComponent( {
   props: {
@@ -35,6 +41,9 @@ export default defineComponent( {
       type : Object as PropType<Data[]>
     }, 
   },
+  components : { 
+    //AgentDetails 
+  }
   // data(props){
   //   return{
   //     lists : props.value   
