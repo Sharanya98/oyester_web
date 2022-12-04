@@ -2,7 +2,7 @@
   <v-container class="main">                 
     <template>
       <v-data-table :headers="headers" :items="value" class="elevation-1">
-        <template v-slot:[`item.Agent`]="{ item }">
+        <template v-slot:[`item.Agent`]= "{ item }">
           <v-btn
             color="primary"
             @click="agentData(item.Agent.id)"
@@ -35,17 +35,17 @@ import { defineComponent, PropType, ref } from "vue";
 import AgentList from "./AgentList.vue";
 import Headers from "@/types/headers";
 import Data from "@/types/data"; 
-
+ 
 export default defineComponent({  
   props: {
     data :{
       required : true,
-      type : Object as PropType<Data[]>  
+      type : Array as PropType<Data[]>  
     } 
   },    
   components: {
     AgentList,  
-  },
+  }, 
   setup(props) {     
     const headers = ref<Headers[]>([
       { text: "ID", value: "id" },
@@ -74,8 +74,8 @@ export default defineComponent({
       const agent = this.value.filter((item) => item.Agent.id == btnvalue);
       this.agentDetails = agent;
     }, 
-  }, 
-});  
+  },          
+});   
 </script>
 
 <style> 
