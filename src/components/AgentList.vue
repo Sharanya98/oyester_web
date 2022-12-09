@@ -9,7 +9,7 @@
     </v-list>
   </v-list>
 </template> 
-
+ 
 <script lang="ts">
 import Agent from "@/types/agent";
 import Data from "@/types/data";

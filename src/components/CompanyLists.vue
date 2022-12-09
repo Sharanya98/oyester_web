@@ -9,11 +9,11 @@
             text 
             outlined 
             class="ma-2"   
-            >{{ item.Agent.id }}   
+            >{{ item.Agent.id }}              
             </v-btn> 
         </template>
       </v-data-table>        
-    </template>
+    </template>   
     <template>       
       <v-navigation-drawer v-model="display" width="300" right absolute temporary>
       <v-list>
@@ -22,7 +22,7 @@
         </v-list-item>
         <v-list-item v-for="info in agentDetails" :key="info">        
           <AgentList :value="info" />        
-        </v-list-item>     
+        </v-list-item>          
       </v-list>  
     </v-navigation-drawer>  
     </template>   
@@ -47,11 +47,22 @@ export default defineComponent({
   }, 
   setup(props) {     
     const headers = ref<Headers[]>([
-      { text: "ID", value: "id" },
-      { text: "Name", value: "Name" },
-      { text: "Location", value: "Location" },
+      { text: "Name", value: "name" },
+      { text: "Agent Name", value: "agentName" },
       { text: "Industry", value: "Industry" },
-      { text: "Agent", value: "Agent" },
+      { text: "Occupation", value: "occupation" },
+      { text: "Phone", value: "phone" },
+      { text: "Location", value: "location" },
+      { text: "Requirement", value: "requirement" },
+      { text: "Industry", value: "Industry" },
+      { text: "Status", value: "status" },
+      { text: "Job Description", value: "jobDescription" },
+      { text: "Work Progress", value: "workProgress" },
+      { text: "Condition", value: "condition" },
+      { text: "URL", value: "url" },
+      { text: "Email", value: "Email" },
+      { text: "remarks", value: "remarks" },
+      { text: "date", value: "date" },
     ]);
     const value = [...props.data];
     

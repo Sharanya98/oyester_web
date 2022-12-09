@@ -1,10 +1,20 @@
-import Agent from './agent'
+import Agent from './agent' 
 
 interface Data {
-    id: number,
-    Name: string,
-    Location: string,
-    Industry: string,
+    name: string,
+    agentName: string,
+    occupation: string,
+    phone: string,
+    location: string,
+    requirement: string,
+    status: string,
+    jobDescription: string,
+    workProgress: string,
+    condition: string, 
+    url: string,
+    email: string,
+    remarks: string,
+    date: string,
     Agent: {
         id: string,
         contact: string,
@@ -12,6 +22,5 @@ interface Data {
         Email: string,        
         Department: string
     }
-}  
-
+}     
 export default Data

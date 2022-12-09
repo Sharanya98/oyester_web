@@ -4,7 +4,7 @@ import HomeView from '../views/HomeView.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+const routes = [ 
   {
     path: '/',
     name: 'home',

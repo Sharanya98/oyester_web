@@ -25,16 +25,15 @@ export default defineComponent({
         if (!res.ok) {
           throw Error("NO ERROR");
         }
-        const data = await res.json();
-        console.log("data",data); 
-
+        const data = await res.json(); 
+        console.log("data",data);  
         list.value = data;
       } catch (err) {
         error.value = err.message;
         console.log(err);
       }
-    };
-
+    }; 
+                
     console.log("home", list);
     load();
 

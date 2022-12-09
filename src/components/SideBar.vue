@@ -25,7 +25,7 @@
       </v-list>
     </v-navigation-drawer>
   </v-card>
-</template>
+</template>  
 
 <script lang="ts">
 import Item from "@/types/item";

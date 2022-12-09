@@ -6,4 +6,4 @@ interface Agent {
     Department: string
 }
 
-export default Agent
+export default Agent 
